@@ -1,7 +1,7 @@
 <section class="spacer-pt-space spacer-pb-space">
     <div class="container">
         <div class="row">
-            @for(list of product; track $index){
+            @for(list of product.slice(startIndex, endIndex); track $index){
             <div class="col-lg-3">
                 <div class="cards">
                     <div class="cards__head">
@@ -16,5 +16,6 @@
             </div>
             }
         </div>
+        <app-pagination (paginationData)="setPaginationIndex($event)" [totalItems]="product?.length"></app-pagination>
     </div>
 </section>

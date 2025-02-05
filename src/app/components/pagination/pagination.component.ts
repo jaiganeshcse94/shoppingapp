@@ -11,7 +11,6 @@ import { NgScrollbarModule } from "ngx-scrollbar";
 export class PaginationComponent {
   @Input() totalItems: number = 5; // Total number of items, can be passed as an input
   itemsPerPage: number = 5; // Number of items per page, can be passed as an input
-  @Input() isSkeleton: boolean = false;
   @Output() paginationData: EventEmitter<any> = new EventEmitter<any>();
 
   currentOffset: number = 0;
