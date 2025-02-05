@@ -1,16 +1,36 @@
 <section class="spacer-pt-space spacer-pb-space">
     <div class="container">
-        <div class="row">
+        <div class="row gap-y-[20px] md:gap-y-[30px]">
             @for(list of product.slice(startIndex, endIndex); track $index){
             <div class="col-lg-3">
                 <div class="cards">
                     <div class="cards__head">
-                        <div class="w-full flex justify-center items-center h-[200px]">
+                        <div class="w-full flex justify-center items-center h-[200px] bg-cover"
+                            [ngStyle]="{'background-image': 'url(' + list.thumbnail + ')'}">
+                            <div class="cards__overlay">
                             <p class="cards__text">{{list.title}}</p>
+                        </div>
                         </div>
                     </div>
                     <div class="cards__body">
-                        <p class="cards__innerText">{{list.description}}</p>
+                        <p class="cards__title">{{list.title}}</p>
+                        <p class="cards__innerText truncate-text">{{list.description}}</p>
+                        <p class="cards__title">Price: {{list.price | currency}}</p>
+                        <div class="form-group type-select">
+                            <label for="{{list.title + '-quantity'}}">quantity</label>
+                            <input type="text" class="form-control" [attr.id]="list.title + '-quantity'" (click)="handler__selectInput($event)"
+                                readonly autocomplete="off">
+                            <div class="select-box" (click)="handler__selectBox($event)">
+                                <ng-scrollbar thumbClass="custom-scrollbars">
+                                    <ul>
+                                        @for(quantity of getQuantityRange(list.minimumOrderQuantity);track $index){
+                                        <li (click)="handler__selectOption($event)">{{quantity}}</li>
+                                        }
+                                    </ul>
+                                </ng-scrollbar>
+                            </div>
+                        </div>
+                        <button class="button button-primary button-small button-full" title="Add To Cart">Add To Cart</button>
                     </div>
                 </div>
             </div>

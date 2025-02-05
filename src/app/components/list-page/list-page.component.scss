@@ -1,16 +1,31 @@
 @import "../../../../public/assets/scss/variables/variables";
 .cards{
-    @apply flex flex-col w-full h-full rounded;
+    @apply flex flex-col w-full h-full rounded border border-[#c3c3c3];
     &__head{
-        @apply bg-secondary-6 w-full flex justify-center items-center;
+        @apply bg-secondary-6 w-full flex justify-center items-center rounded-t;
     } 
     &__body{
-        @apply p-4 bg-white;
+        @apply p-4 bg-white rounded-b;
     }
     &__innerText{
-        @apply text-xs md:text-sm text-secondary-6 !mb-0;
+        @apply text-xs md:text-sm text-secondary-6 mb-3;
     }
     &__text{
         @apply text-white text-center text-base mb-0 lg:text-lg;
     }
+    &__title{
+        @apply text-xs md:text-sm text-black font-gilmer-medium mb-3;
+    }
+    &__overlay{
+        @apply h-full w-full flex justify-center items-center;
+        background: rgba(0,0,0,0.5);
+    }
 }
+
+.truncate-text {
+    @apply overflow-hidden text-ellipsis; /* Tailwind utilities */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  

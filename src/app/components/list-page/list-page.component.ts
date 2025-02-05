@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ProductDataService } from '../../services/product-data.service';
 import { Subscription } from 'rxjs';
 import { PaginationComponent } from '../pagination/pagination.component';
+import { CommonModule } from '@angular/common';
+import { NgScrollbarModule } from 'ngx-scrollbar';
+import { selectBoxHide, selectBoxInput, selectBoxOption } from '../../utilities/selectBox.utilities';
 @Component({
   selector: 'app-list-page',
-  imports: [PaginationComponent],
+  imports: [PaginationComponent,CommonModule,NgScrollbarModule],
   templateUrl: './list-page.component.html',
   styleUrl: './list-page.component.scss'
 })
@@ -35,6 +38,27 @@ constructor (private data:ProductDataService){}
 setPaginationIndex(value: any) {
   this.startIndex = value.startIndex;
   this.endIndex = value.endIndex;
+}
+
+@HostListener("click") onDocumentClick() {
+  selectBoxHide("show");
+}
+handler__selectInput($event: any) {
+  selectBoxInput($event);
+}
+handler__selectBox($event: any) {
+  $event.stopImmediatePropagation();
+}
+handler__selectOption($event: any) {
+  selectBoxOption($event);
+}
+
+getQuantityRange(minQuantity: number): number[] {
+  const range = [];
+  for (let i = 1; i <= minQuantity; i++) {
+    range.push(i);
+  }
+  return range;
 }
 
 }
