@@ -1,0 +1,318 @@
+.accordion {
+    &--none {
+        .accordion__content {
+            display: none;
+            max-height: initial;
+            overflow: initial;
+        }
+    }
+
+    &__items {
+        border-bottom: 1px solid #E6E6E6;
+
+        &.active {
+            border-bottom: 1px solid $primary-1;
+
+            .accordion__heading {
+                padding-bottom: 16px;
+
+                &::before {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        padding: 24px 16px 16px;
+        cursor: pointer;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            background: url("../../../../public/assets/images/icons/down.svg") no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: 22px;
+            right: 16px;
+            margin: auto;
+            transition: all 0.5s ease;
+            transform: rotate(0deg);
+        }
+    }
+
+    &__content {
+        max-height: 0;
+        transition: max-height 0.5s ease;
+        overflow: hidden;
+    }
+
+    &__contentText {
+        padding-right: 50px;
+        padding-bottom: 24px;
+        padding-left: 16px;
+        // color: #404040;
+
+        p {
+            font-size: 14px;
+            font-family: $font-regular;
+            line-height: 21px;
+            // color: #404040;
+            margin-bottom: 15px;
+        }
+    }
+
+    &-typeThree {
+        .accordion {
+            &__items {
+                background-color: #F7F7F7;
+                border-radius: 16px;
+                border-bottom: none;
+
+                &.active {
+                    border-bottom: none;
+
+                    .accordion__heading {
+                        padding-bottom: 16px;
+                        @media (min-width:768px) {
+                            padding-bottom: 24px;
+                        }
+
+                        &::before {
+                            background: url("../../../../public/assets/images/icons/minus.svg") no-repeat;
+                            transform: none;
+                        }
+                    }
+                }
+            }
+
+            &__heading {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+                padding: 16px;
+                cursor: pointer;
+                position: relative;
+                color: $secondary-4;
+                @media (min-width:768px) {
+                    padding: 24px;
+                }
+                &::before {
+                    content: "";
+                    min-width: 24px;
+                    min-height: 24px;
+                    background: url("../../../../public/assets/images/icons/plus.svg") no-repeat;
+                    background-size: contain; 
+                    transition: all 0.5s ease;
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                    margin: 0;
+                }
+              
+            }
+
+            &__contentText {
+                padding: 0 16px 16px;
+                color: $secondary-4;
+                @media (min-width:768px) {
+                    padding: 0 24px 24px;;
+                }
+                p {
+                    font-size: 12px;
+                    font-family: $font-bold;
+                    line-height: 16px;
+                    color: #666666;
+                    margin-bottom: 15px;
+                    text-align: center;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+
+    &-typeFour {
+        .accordion {
+            &__items {
+                border-bottom: 1px solid #E6E6E6 !important;
+                border-radius: 0px !important;
+
+                &.active {
+                    border-bottom: 1px solid #E6E6E6 !important;
+
+                    .accordion__heading {
+                    
+
+                        &::before {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+
+                &:last-child {
+                    border-bottom: none !important;
+                }
+            }
+
+            &__heading {
+                padding: 24px 16px 16px;
+                padding-left: 16px !important;
+                justify-content: start;
+                &::before {
+                    content: "";
+                    width: 24px;
+                    height: 24px;
+                    background: url("../../../../public/assets/images/icons/down.svg") no-repeat !important;
+                    background-size: contain;
+                    position: absolute;
+                    top: 22px;
+                    right: unset !important;
+                    left: 0 !important;
+                    margin: auto;
+                    transition: all 0.5s ease;
+                    transform: rotate(0deg);
+                }
+            }
+
+            &__contentText {
+                padding-right: 24px;
+                padding-bottom: 24px;
+                padding-left: 24px;
+                p {
+                    line-height: 14px;
+                    text-align: left !important;
+                    margin-bottom: 0px;
+                    padding-left: 8px !important;
+                }
+            }
+        }
+    }
+
+    &-typeFive {
+        .accordion {
+            &__items {
+                border-bottom: none !important;
+
+                &.active {
+                    border-bottom: none !important;
+
+                    .accordion__heading {
+                        padding-bottom: 16px;
+
+                        &::before {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+            }
+            &__heading {
+                display: flex;
+                align-items: center;
+                padding: 24px ;
+                cursor: pointer;
+                position: relative;
+                flex-direction: row-reverse !important;
+                justify-content: space-between  !important;
+        
+                &::before {
+                    content: "";
+                    width: 24px;
+                    height: 24px;
+                    background: url("../../../../public/assets/images/icons/down.svg") no-repeat;
+                    background-size: contain;
+                    position: relative;
+                    top: 0 !important;
+                    right: 0 !important;
+                    margin: unset !important;
+                    transition: all 0.5s ease;
+                    transform: rotate(0deg);
+                }
+            }
+            &__contentText {
+                padding-right: 20px !important;
+                padding-bottom: 24px;
+                padding-left: 16px;
+                // color: #404040;
+        
+                p {
+                    font-size: 14px;
+                    font-family: $font-regular;
+                    line-height: 21px;
+                    // color: #404040;
+                    margin-bottom: 15px;
+                   
+                }
+            }
+        }
+
+    }
+
+    &-typeSix {
+        .accordion {
+            &__items {
+                position: relative  !important;
+                border-bottom: none !important;
+                
+
+                &.active {
+                    border-bottom: none !important;
+
+                    .accordion__heading {
+                        padding-bottom: 16px;
+
+                        &::before {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+            }
+            &__heading {
+                display: flex;
+                align-items: center;
+                padding: 0px !important;
+                cursor: pointer;
+                position: unset !important;
+                // flex-direction: row-reverse !important;
+                justify-content: space-between  !important;
+                &::before {
+                    content: "";
+                    width: 24px;
+                    height: 24px;
+                    background: url("../../../../public/assets/images/icons/down.svg") no-repeat;
+                    background-size: contain;
+                    position: absolute !important;
+                    top: unset !important;
+                    bottom: -10px !important;
+                    right: 0 !important;
+                    left: 0 !important;
+                    margin:  auto !important;
+                    transition: all 0.5s ease;
+                    transform: rotate(0deg);
+                }
+        
+                
+            }
+            &__contentText {
+                padding-right: 0px !important;
+                padding-bottom: 0px !important;
+                padding-left: 0px !important;
+                // color: #404040;
+        
+                p {
+                    font-size: 14px;
+                    font-family: $font-regular;
+                    line-height: 21px;
+                    // color: #404040;
+                    margin-bottom: 15px;
+                   
+                }
+            }
+        }
+
+    }
+}

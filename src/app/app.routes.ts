@@ -1,3 +1,8 @@
 import { Routes } from '@angular/router';
-
-export const routes: Routes = [];
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './auth/auth-gaurd';
+export const routes: Routes = [
+    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+    { path: "login", component: LoginComponent },
+];

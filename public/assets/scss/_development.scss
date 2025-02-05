@@ -1,0 +1,20 @@
+.ng-scrollbar-thumb {
+  background-color: $primary-1 !important;
+  border-radius: 7px !important;
+}
+.ng-scrollbar-track {
+  background-color: #cbcbcb !important;
+  border-radius: 7px !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.mandatory-field{
+  color: #eb2121;
+}

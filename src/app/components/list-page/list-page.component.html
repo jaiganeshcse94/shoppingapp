@@ -1,0 +1,20 @@
+<section class="spacer-pt-space spacer-pb-space">
+    <div class="container">
+        <div class="row">
+            @for(list of product; track $index){
+            <div class="col-lg-3">
+                <div class="cards">
+                    <div class="cards__head">
+                        <div class="w-full flex justify-center items-center h-[200px]">
+                            <p class="cards__text">{{list.title}}</p>
+                        </div>
+                    </div>
+                    <div class="cards__body">
+                        <p class="cards__innerText">{{list.description}}</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

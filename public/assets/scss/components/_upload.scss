@@ -1,0 +1,195 @@
+@import "../../../../public/assets/scss/variables/variables";
+.upload{    
+    &-wrap{
+        position: relative;
+        width: 170px;
+        height: 160px;
+        margin: 0 auto 25px;
+        @media (min-width:768px) {
+           margin: 0 0 40px;
+        }
+    }
+    &-input{
+        border: 1px dashed #bbb;
+        border-radius: 10px;
+        background-image: url('/assets/images/icons/photo-dummy.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+    &-imgContent {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        img{
+            margin-bottom: 10px;
+        }
+    }
+    &-title {
+        margin: 0;
+        color: $black;
+    }
+    &-fileName {
+        margin-bottom:25px;
+        text-align: center;
+        color: $black;
+        @media (min-width:768px) {
+            text-align: left;
+        }
+    }
+    &-image {
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    &--document{
+        .upload{
+        &-wrap {
+            width: 100%;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: $white;
+            border: 1px solid#ccd4d4;
+            border-radius: 8px;
+            margin-bottom: 0;
+        }
+        &-text {
+            font-size: 14px;
+            font-family: $font-medium;
+            line-height: 22px;
+            position: relative;
+            margin: 0;
+            cursor: pointer;
+            &::before {
+                content: "";
+                width: 25px;
+                height: 25px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                left: -30px;
+                position: absolute;
+                background: url('/assets/images/icons/upload.svg') no-repeat center / contain;
+            }
+        }
+        &-file {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            z-index: 1;
+            cursor: pointer;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+        }
+        &-icon {
+            width: 16px;
+            height: 16px;
+            background: url('/assets/images/icons/notepad-icon.svg') no-repeat center / contain;
+            margin-right: 10px;
+        }
+        &-fileName {
+            padding: 5px 15px;
+            background: #F2F2F2;
+            border-radius: 48px;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            max-width: 240px;
+            transform: translate(15px, -50%);
+            display: none;
+            align-items: center;
+            @media (min-width:992px) {
+                max-width: 215px;
+            }
+            @media (min-width:1200px) {
+                max-width: 300px;
+                left: 0;  
+            }
+        }
+        &-fileTxt {
+            max-width: 150px;
+            display: inline-block;
+            margin: 0;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-family: $font-regular;
+            font-size: 12px;
+            color: #121212;
+        }
+        &-close {
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 15px;
+            position: absolute;
+            background: url('/assets/images/icons/file-close-icon.svg') no-repeat center;
+            border: none;
+        }
+        
+        &-view {
+            display: none;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 15px;
+            margin: auto;
+            background: url('/assets/images/icons/eye-icon.svg') no-repeat center;
+            border: none;
+        }
+        &-box {
+            &.active {
+                .upload-inner {
+                    width: 100%;
+                    position: absolute;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        top: 0; 
+                        z-index: 2;
+                }
+                .upload-fileName{
+                    width: 240px;
+                    @media (min-width:992px) {
+                        width: 215px;
+                    }
+                    @media (min-width:1200px) {
+                        width: 240px;
+                    }
+                }
+                .upload-view {
+                    display: block;
+                }
+                .upload-text {
+                    display: none;
+                }
+                .upload-fileName {
+                    display: flex;
+                }
+            }
+        }
+    }
+    }
+}

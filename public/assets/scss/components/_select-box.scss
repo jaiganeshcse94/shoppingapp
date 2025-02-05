@@ -1,0 +1,59 @@
+@import "../../../../src/styles/variables/global-variable";
+/* Custom select box */
+
+.type-select {
+    .form-control {
+        background: $white
+            url("../../../assets/images/icons/down.svg")
+            no-repeat;
+        background-position: calc(100% - 10px) center !important;
+        padding-right: 35px;
+        cursor: pointer;
+    }
+    .select-box {
+        width: 100%;
+        max-height: 180px !important;
+        background: $white;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        overflow-y: auto;
+        visibility: hidden;
+        position: absolute;
+        z-index: 9;
+        transform-origin: 0 0 0;
+        transform: scaleY(0);
+        &.show {
+            visibility: visible;
+            transform: scaleY(1);
+            transition: all 0.3s ease;
+        }
+        li {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            &:hover {
+                background: rgb(255 203 9 / 10%);
+            }
+        }
+    }
+    &-typeTwo{
+        .form-control{
+            background: $white
+            url("../../../assets/images/icons/down-arrow-blue.svg")
+            no-repeat;
+            color: #2F7EF4 !important;
+            border: 0 !important;
+            font-size: 16px !important;
+            line-height: 16px;
+        }
+        .select-box{
+            li{
+                font-family: $font-medium;
+                border-bottom: 1px solid #F2F2F2;
+                &:hover {
+                    background: rgba(254,212,55,.3);
+                }
+            }
+        }
+    }
+}

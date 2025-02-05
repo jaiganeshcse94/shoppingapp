@@ -1,0 +1,16 @@
+@import "../../../../public/assets/scss/variables/variables";
+.cards{
+    @apply flex flex-col w-full h-full rounded;
+    &__head{
+        @apply bg-secondary-6 w-full flex justify-center items-center;
+    } 
+    &__body{
+        @apply p-4 bg-white;
+    }
+    &__innerText{
+        @apply text-xs md:text-sm text-secondary-6 !mb-0;
+    }
+    &__text{
+        @apply text-white text-center text-base mb-0 lg:text-lg;
+    }
+}

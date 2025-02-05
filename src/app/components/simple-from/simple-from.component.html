@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="flex justify-center items-center h-screen">
+        <div class="w-full lg:w-1/2 lg:h-full">
+            <div class="flex flex-col lg:justify-center h-full">
+                <div class="flex flex-col lg:justify-center w-full">
+                    <h3 class="text-black text-20 font-gilmer-regular mb-4 leading-[24px] md:text-24 md:leading-[28px]">
+                        Welcome to Shriram Finance, login to continue</h3>
+                    <p class="text-secondary-4 text-12 font-gilmer-regular leading-[18px] mb-6  md:mb-12 md:text-14">
+                        Enter your mobile number to access your Shriram Account.
+                    </p>
+                    <form [formGroup]="userForm" name="userForm" method="POST">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="form-group">
+                                    <label for="mobile_no">Mobile Number<sup>*</sup></label>
+                                    <input type="text" data-type="input" class="form-control" formControlName="mobileNo"
+                                        name="mobile_no" id="mobile_no" autocomplete="off" maxlength="10">
+                                    @if(userForm.controls['mobileNo'].touched){
+                                    @if(userForm.controls['mobileNo'].hasError('required')){
+                                    <div class="errMsg">mobile no is required.</div>
+                                    }
+                                    @else if(userForm.controls['mobileNo'].hasError('pattern')){
+                                    <div class="errMsg">max mobile no. is 10</div>
+                                    }
+                                    }
+                                </div>
+                                <div class="form-group">
+                                    <label for="pincode">Pincode<sup>*</sup></label>
+                                    <input type="text" data-type="input" class="form-control" formControlName="pincode"
+                                        name="pincode" id="pincode" autocomplete="off" maxlength="6">
+                                    @if(userForm.controls['pincode'].touched){
+                                    @if(userForm.controls['pincode'].hasError('required')){
+                                    <div class="errMsg">pincode no is required.</div>
+                                    }
+                                    @else if(userForm.controls['pincode'].hasError('pattern')){
+                                    <div class="errMsg">max pincode no. is 6</div>
+                                    }
+                                    }
+                                </div>
+                                <button type="button" title="Login" class="button button-full button-default"
+                                    [disabled]="userForm.invalid" (click)="login()">
+                                    <span>Login</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

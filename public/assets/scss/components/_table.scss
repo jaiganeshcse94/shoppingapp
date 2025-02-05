@@ -1,0 +1,126 @@
+@import "../../../../public/assets/scss/variables/variables";
+.cardTable {
+  &__inner {
+    @apply w-full border-collapse;
+  }
+  &__heading {
+    @apply text-[#858585] text-10 font-gilmer-medium pb-0;
+  }
+  &__subText {
+    @apply text-12 text-[secondary-4] font-gilmer-medium mt-[2px];
+    @media (min-width:768px){
+      @apply text-14
+    }
+    &--green {
+      @apply text-[#116c09];
+    }
+  }
+
+  thead {
+    tr {
+      @apply hidden;
+      @media (min-width: 992px) {
+        @apply table-row;
+      }
+      &:last-child {
+        @apply mb-0;
+      }
+      th {
+        @apply text-16 text-[#121212] font-gilmer-medium py-6 px-5 border-b-[4px] border-solid border-[#FFCB09];
+      }
+    }
+  }
+  tbody {
+    tr {
+      @media (max-width: 992px) {
+        @apply flex flex-wrap mb-6 last:mb-0 border-[1px] border-solid border-[#FFCB09] rounded-[16px] p-4;
+      }
+      @media (min-width: 992px) { 
+        @apply border-b-[1px] border-solid border-[#FFCB09] last:border-b-0
+      }
+      td {
+        @apply w-2/4 mb-4;
+        @media (min-width: 992px) {
+          @apply w-auto py-6 px-5 text-center;
+        }
+        &:nth-child(1) {
+          @media (max-width: 992px) {
+            @apply order-1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tableTypeOne {
+  @apply w-full;
+  &__tableInner {
+    @apply w-full border-collapse;
+  }
+  &__tableInner {
+    tr {
+      &:last-child {
+        td {
+          @apply border-b-0;
+        }
+      }
+    }
+    td {
+      @apply w-auto py-6 px-5 text-center border-b border-solid border-[#FFCB09];
+    }
+  }
+  &__head {
+    @apply border-b-4 border-solid border-[#FFCB09];
+    @media (min-width: 992px) {
+      @apply p-4 text-16 font-gilmer-medium text-[121212];
+    }
+    &--tableBorder {
+      @apply border-b-[1px] border-solid border-[#E6E6E6];
+    }
+    &--innerItem {
+      @media (min-width: 992px) {
+        @apply text-12;
+      }
+    }
+  }
+  &__innerText {
+    @apply text-14 text-[#121212] font-gilmer-medium;
+  }
+  &__subText {
+    @apply text-12 text-[#333333] font-gilmer-medium;
+  }
+  &__itemContent {
+    @apply text-14 text-[#121212] font-gilmer-medium mt-[2px];
+    @media (min-width: 992px) {
+      @apply mt-0;
+    }
+  }
+  &__inputForm {
+    @apply max-w-[160px] py-[10px] px-4;
+  }
+}
+.defaultTable{
+  @apply overflow-x-auto border-[1px] border-solid border-[#dddddd] rounded border-spacing-0 text-[#ddddddd];
+  table{
+    @apply rounded border-spacing-0 w-full text-left whitespace-nowrap border-[0];
+  }
+  thead{
+    tr{
+      th{
+        @apply py-3 px-5  border-b border-solid border-[#dddddd] text-14 bg-[#E8E8E8];
+      }
+    }
+  }
+  tbody{
+    tr{
+      @apply border-b border-solid border-[#dddddd] last:border-[0];
+      td{
+        @apply py-3 px-5;
+      }
+    }
+  }
+  .text-green{
+    @apply text-[#116c09];
+  }
+}

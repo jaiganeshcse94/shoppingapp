@@ -1,0 +1,52 @@
+.cardTable {
+    &__inner {
+      @apply w-full border-collapse;
+    }
+    &__heading {
+      @apply text-[#858585] text-10 font-gilmer-medium pb-0;
+    }
+    &__subText {
+      @apply text-12 text-[secondary-4] font-gilmer-medium mt-[2px];
+      &--green {
+        @apply text-[#116c09];
+      }
+    }
+  
+    thead {
+      tr {
+        @apply hidden;
+        @media (min-width: 992px) {
+          @apply table-row;
+        }
+        &:last-child {
+          @apply mb-0;
+        }
+        th {
+          @apply text-16 text-[#121212] font-gilmer-medium py-6 px-5 border-b-[4px] border-solid border-[#FFCB09];
+        }
+      }
+    }
+    tbody {
+      tr {
+        @media (max-width: 992px) {
+          @apply flex flex-wrap mb-6 border-[1px] border-solid border-[#FFCB09] rounded-[16px] p-4;
+        }
+  
+        td {
+          @apply w-2/4 mb-4;
+          @media (min-width: 768px) {
+            @apply w-2/6;
+          }
+          @media (min-width: 992px) {
+            @apply w-auto py-6 px-5 text-center border-b-[1px] border-solid border-[#FFCB09];
+          }
+          &:nth-child(1) {
+            @media (max-width: 992px) {
+              @apply order-1;
+            }
+          }
+        }
+      }
+    }
+  }
+

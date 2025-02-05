@@ -1,0 +1,63 @@
+.card {
+    @apply p-4 bg-white rounded-2xl;
+    box-shadow: 0px 8px 44px 0px #0000001A;
+    &-heading {
+        @apply text-secondary-4 text-16 font-gilmer-medium mb-4;
+        @media(min-width: 768px) {
+            @apply text-14
+        }
+        &-medium{
+            @media(min-width: 768px) {
+                @apply text-18
+            }
+        }
+        &-small{
+            @apply text-14 mb-2;
+        }
+    }
+    &-medium {
+        @apply p-6 
+    }
+    &-space{
+        &-typeOne{
+            @apply py-4 px-3; 
+            @media (min-width:768px) {
+                @apply py-5 px-6;
+            }
+        }
+        &-typeTwo{
+            @apply p-3; 
+            @media (min-width:768px) {
+                @apply py-4 px-6;
+            }
+        }
+        &-typeThree{
+            @apply p-4; 
+            @media (min-width:768px) {
+                @apply py-4 px-3;
+            }
+        }
+        &-typeFour{
+            @apply py-6 px-4; 
+        }
+        &-typeFive{
+            @apply p-3; 
+            @media (min-width:768px) {
+                @apply py-4 px-3;
+            }
+        }
+        &-typeSix{
+            @apply px-4 py-6; 
+            @media (min-width:768px){
+                @apply p-10; 
+            }
+            
+        }
+    }
+    &-noShadow{
+        box-shadow: none;
+    }
+    &-grey{
+        @apply bg-[#F7F7F7] p-4 rounded-lg;
+    }
+}
